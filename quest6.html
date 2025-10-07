@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Alunos com CSS</title>
+  <style>
+    .aluno {
+      border: 1px solid blue;
+      padding: 8px;
+      margin: 8px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="alunos"></div>
+
+  <script>
+    const alunos = [
+      { nome: "Anna", nota: 8 },
+      { nome: "Cecilia", nota: 6 },
+      { nome: "Sophia", nota: 9 }
+    ]
+
+    function mostrarAlunos() {
+      const divAlunos = document.getElementById("alunos")
+
+      alunos.forEach(aluno => {
+        const divAluno = document.createElement("div")
+        divAluno.className = "aluno"
+
+        const titulo = document.createElement("h2")
+        titulo.innerText = aluno.nome
+
+        const nota = document.createElement("p")
+        nota.innerText = "Nota: " + aluno.nota
+
+        divAluno.appendChild(titulo)
+        divAluno.appendChild(nota)
+
+        divAlunos.appendChild(divAluno)
+      })
+    }
+
+    mostrarAlunos()
+  </script>
+</body>
+</html>

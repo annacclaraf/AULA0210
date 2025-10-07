@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Alunos</title>
+</head>
+<body>
+  <div id="alunos"></div>
+
+  <script>
+    const alunos = [
+      { nome: "Anna", nota: 8 },
+      { nome: "Cecilia", nota: 6 },
+      { nome: "Sophia", nota: 9 }
+    ]
+
+    function mostrarAlunos() {
+      const divAlunos = document.getElementById("alunos")
+
+      alunos.forEach(aluno => {
+        const titulo = document.createElement("h2")
+        titulo.innerText = aluno.nome
+
+        const nota = document.createElement("p")
+        nota.innerText = "Nota: " + aluno.nota
+
+        divAlunos.appendChild(titulo)
+        divAlunos.appendChild(nota)
+      })
+    }
+
+    mostrarAlunos()
+  </script>
+</body>
+</html>
